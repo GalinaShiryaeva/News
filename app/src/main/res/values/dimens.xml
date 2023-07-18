@@ -1,3 +1,20 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    // spacings
+    <dimen name="spacing_common">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_extra_small">4dp</dimen>
+
+    // text
+    <dimen name="text_large_header">30sp</dimen>
+    <dimen name="text_header">24sp</dimen>
+    <dimen name="text_extra_large">20sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_extra_small">10sp</dimen>
+
+    // elements
+    <dimen name="dialogs_corner_radius">24dp</dimen>
+    <dimen name="card_view_corner_radius">14dp</dimen>
+    <dimen name="edit_text_corner_radius">0dp</dimen>
 </resources>

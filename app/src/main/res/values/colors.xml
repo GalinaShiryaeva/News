@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#878787</color>
+
+    <color name="background_grey">#EAE7E2</color> // from ui prototype
+    <color name="background_common">#FFFCF7</color> // from ui prototype
+
+    <color name="yellow">#EFC476</color> // from ui prototype
+    <color name="green">#6C9455</color> // from ui prototype
+
+    <color name="light_yellow">#F8EACF</color> // from ui prototype
+    <color name="light_green">#D4DABE</color> // from ui prototype
+    <color name="light_brown">#BA997D</color> // from ui prototype
+
+    <color name="dark_brown">#493B36</color> // from ui prototype
+
+    <color name="color_transparent">#00FFFFFF</color>
 </resources>
