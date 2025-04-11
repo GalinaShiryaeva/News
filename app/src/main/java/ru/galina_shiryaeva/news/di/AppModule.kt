@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.di
+package ru.galina_shiryaeva.news.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

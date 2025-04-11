@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.data.remote.response
+package ru.galina_shiryaeva.news.domain.model.russianNews
 
 data class Source(
     val category: String,

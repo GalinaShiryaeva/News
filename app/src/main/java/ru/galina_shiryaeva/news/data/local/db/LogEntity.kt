@@ -1,9 +1,9 @@
-package ru.galina_shiryaeva.data.local.db
+package ru.galina_shiryaeva.news.data.local.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import ru.galina_shiryaeva.domain.model.AppLog
+//import ru.galina_shiryaeva.domain.model.AppLog
 
 @Entity(tableName = "appLogs")
 data class AppLogEntity(
@@ -12,9 +12,9 @@ data class AppLogEntity(
     @ColumnInfo(name = "timestamp") val timestamp: String,
     @ColumnInfo(name = "log") val log: String
 ) {
-    fun mapFromEntityToDomain() = AppLog(
-        id = id,
-        timestamp = timestamp,
-        log = log
-    )
+//    fun mapFromEntityToDomain() = AppLog(
+//        id = id,
+//        timestamp = timestamp,
+//        log = log
+//    )
 }

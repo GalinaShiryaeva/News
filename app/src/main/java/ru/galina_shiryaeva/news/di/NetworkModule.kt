@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.di
+package ru.galina_shiryaeva.news.di
 
 import android.annotation.SuppressLint
 import dagger.Module
@@ -10,8 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import ru.galina_shiryaeva.data.remote.ApiService
-import ru.galina_shiryaeva.data.util.LoggingInterceptor
+import ru.galina_shiryaeva.news.data.remote.ApiService
 import ru.galina_shiryaeva.news.BuildConfig
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -25,7 +24,7 @@ class NetworkModule {
     @Singleton
     fun provideRetrofit(
     okHttpClient: OkHttpClient,
-    loggingInterceptor: LoggingInterceptor
+//    loggingInterceptor: LoggingInterceptor
     ): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
@@ -33,7 +32,7 @@ class NetworkModule {
             .client(
                 okHttpClient.newBuilder()
 //                    .addInterceptor(dynamicBaseUrlInterceptor)
-                    .addInterceptor(loggingInterceptor)
+//                    .addInterceptor(loggingInterceptor)
                     .build()
             )
             .build()

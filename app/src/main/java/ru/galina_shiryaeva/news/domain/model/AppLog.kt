@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.domain.model
+package ru.galina_shiryaeva.news.domain.model
 
 data class AppLog(
     val id: Long,

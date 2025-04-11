@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.data.util
+package ru.galina_shiryaeva.news.data.util
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -7,9 +7,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Interceptor
 import okhttp3.Response
-import ru.galina_shiryaeva.data.local.Constants
-import ru.galina_shiryaeva.data.local.db.AppLogDao
-import ru.galina_shiryaeva.presentation.utils.TextUtils
+import ru.galina_shiryaeva.news.data.local.Constants
+import ru.galina_shiryaeva.news.data.local.db.AppLogDao
+import ru.galina_shiryaeva.news.presentation.utils.TextUtils
 import java.net.UnknownHostException
 import java.text.SimpleDateFormat
 import java.util.Date

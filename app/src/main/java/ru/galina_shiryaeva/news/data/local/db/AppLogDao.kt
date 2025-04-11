@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.data.local.db
+package ru.galina_shiryaeva.news.data.local.db
 
 import androidx.room.Dao
 import androidx.room.Query

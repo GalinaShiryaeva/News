@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.presentation.utils
+package ru.galina_shiryaeva.news.presentation.utils
 
 import android.annotation.SuppressLint
 import okhttp3.Request

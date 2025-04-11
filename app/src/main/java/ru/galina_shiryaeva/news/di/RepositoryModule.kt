@@ -1,17 +1,21 @@
-package ru.galina_shiryaeva.di
+package ru.galina_shiryaeva.news.di
 
+import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ru.galina_shiryaeva.news.data.RepositoryImpl
+import ru.galina_shiryaeva.news.domain.repository.Repository
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 interface RepositoryModule {
-/*
     @Binds
     @Singleton
     fun bindRepository(repository: RepositoryImpl): Repository
 
+/*
     @Binds
     @Singleton
     fun bindUserInfoRepository(repository: UserInfoRepositoryImpl): UserInfoRepository
