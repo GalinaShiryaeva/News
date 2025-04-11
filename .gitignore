@@ -3,9 +3,12 @@
 /local.properties
 /.idea/caches
 /.idea/libraries
+/.idea/gradle.xml
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
+/.idea/migrations.xml
+/.idea/misc.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
@@ -13,3 +16,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/deploymentTargetDropDown.xml
+/.idea/.name
+/app/release
+/app/clientappjks.jks
