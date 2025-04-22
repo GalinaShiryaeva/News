@@ -7,6 +7,8 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+
 /*
     @Provides
     fun provideNotificationManager(

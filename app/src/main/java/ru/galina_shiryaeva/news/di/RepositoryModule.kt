@@ -3,6 +3,7 @@ package ru.galina_shiryaeva.news.di
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.components.SingletonComponent
 import ru.galina_shiryaeva.news.data.RepositoryImpl
 import ru.galina_shiryaeva.news.domain.repository.Repository

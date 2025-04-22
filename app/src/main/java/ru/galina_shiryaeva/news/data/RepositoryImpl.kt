@@ -8,13 +8,12 @@ import javax.inject.Singleton
 
 @Singleton
 class RepositoryImpl @Inject constructor(
-//    private val context: Context
     private val apiService: ApiService
 ) : Repository {
 
     override suspend fun getAllRussianNews(): RussianNews? {
         apiService.getAllRussianNews().also { response ->
-            println("::::: response = $response")
+            println("::::: response = ${response.body()}")
             return if (response.isSuccessful) {
                 response.body()?.mapToDomain()
             } else {

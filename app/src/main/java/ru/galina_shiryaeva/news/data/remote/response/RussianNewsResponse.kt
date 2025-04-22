@@ -6,7 +6,7 @@ import ru.galina_shiryaeva.news.domain.model.russianNews.RussianNews
 data class RussianNewsResponse(
 
     @SerializedName("sources")
-    val sources: List<SourceDto>?,
+    val sources: List<NewsItemDto>?,
     @SerializedName("status")
     val status: String
 ) {

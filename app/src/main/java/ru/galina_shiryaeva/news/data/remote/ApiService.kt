@@ -1,6 +1,7 @@
 package ru.galina_shiryaeva.news.data.remote
 
 import retrofit2.Response
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
 import ru.galina_shiryaeva.news.data.remote.response.RussianNewsResponse
@@ -14,7 +15,7 @@ const val RUS_NEWS_URL = "${GENERAL}country=${LANG_PARAM}&apiKey=$API_KEY"
 
 interface ApiService {
 
-    @POST(RUS_NEWS_URL)
+    @GET(RUS_NEWS_URL)
     suspend fun getAllRussianNews(
 //        @Query("country") country: String = LANG_PARAM,
 //        @Query("apiKey") apiKey: String = API_KEY
