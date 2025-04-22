@@ -1,6 +1,6 @@
 package ru.galina_shiryaeva.news.domain.model.russianNews
 
-data class RussianNews(
-    val sources: List<NewsItem>?,
+data class RusHeadlinesSources(
+    val sources: List<HeadlinesSource>?,
     val status: String
 )

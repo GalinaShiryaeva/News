@@ -2,24 +2,36 @@ package ru.galina_shiryaeva.news.data.remote
 
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
-import ru.galina_shiryaeva.news.data.remote.response.RussianNewsResponse
+import ru.galina_shiryaeva.news.data.remote.response.RusHeadlinesSourcesResponse
 
-const val GENERAL = "v2/top-headlines/sources?"
-const val LANG_PARAM = "ru"
-const val API_KEY = "46b53b521c1f439995d72d10464636a3"
+//const val GENERAL = "v2/top-headlines/sources?"
+//const val LANG_RU_PARAM = "country=ru"
+//
+//const val EVERYTHING = "v2/everything"
+//const val Q_PARAMETER = "?q=plants"
+//const val LANG_EN_PARAM = "&language=en"
 
-const val RUS_NEWS_URL = "${GENERAL}country=${LANG_PARAM}&apiKey=$API_KEY"
+
+const val HEADLINES_SOURCES_URL = "v2/top-headlines/sources?country=ru"
+const val EVERYTHING_PLANTS_URL = "v2/everything?q=plants&language=en"
+
+const val API_KEY = "&apiKey=46b53b521c1f439995d72d10464636a3"
+
+
+const val RUS_NEWS_URL = "${HEADLINES_SOURCES_URL}$API_KEY"
 // https://newsapi.org/v2/top-headlines/sources?country=ru&apiKey=46b53b521c1f439995d72d10464636a3
+const val NEWS_BY_PLANTS_URL = "${EVERYTHING_PLANTS_URL}$API_KEY"
+//https://newsapi.org/v2/everything?q=plants&language=en&pageSize=20&page=5&apiKey=46b53b521c1f439995d72d10464636a3
 
 interface ApiService {
 
     @GET(RUS_NEWS_URL)
-    suspend fun getAllRussianNews(
-//        @Query("country") country: String = LANG_PARAM,
-//        @Query("apiKey") apiKey: String = API_KEY
-    ): Response<RussianNewsResponse?>
+    suspend fun getHeadlinesSources(
+    ): Response<RusHeadlinesSourcesResponse?>
+
+    @GET(RUS_NEWS_URL)
+    suspend fun getAllAboutPlants(
+    ): Response<RusHeadlinesSourcesResponse?>
 
 
 //    @POST(GENERAL)

@@ -1,6 +1,6 @@
 package ru.galina_shiryaeva.news.domain.model.russianNews
 
-data class NewsItem(
+data class HeadlinesSource(
     val category: String,
     val country: String,
     val description: String,

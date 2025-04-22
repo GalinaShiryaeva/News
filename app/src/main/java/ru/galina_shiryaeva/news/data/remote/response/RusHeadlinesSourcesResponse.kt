@@ -1,16 +1,16 @@
 package ru.galina_shiryaeva.news.data.remote.response
 
 import com.google.gson.annotations.SerializedName
-import ru.galina_shiryaeva.news.domain.model.russianNews.RussianNews
+import ru.galina_shiryaeva.news.domain.model.russianNews.RusHeadlinesSources
 
-data class RussianNewsResponse(
+data class RusHeadlinesSourcesResponse(
 
     @SerializedName("sources")
-    val sources: List<NewsItemDto>?,
+    val sources: List<HeadlinesSourceDto>?,
     @SerializedName("status")
     val status: String
 ) {
-    fun mapToDomain() = RussianNews(
+    fun mapToDomain() = RusHeadlinesSources(
         sources = sources?.map { it.mapToDomain() },
         status = status
     )

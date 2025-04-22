@@ -1,8 +1,8 @@
 package ru.galina_shiryaeva.news.data.remote.response
 
-import ru.galina_shiryaeva.news.domain.model.russianNews.NewsItem
+import ru.galina_shiryaeva.news.domain.model.russianNews.HeadlinesSource
 
-data class NewsItemDto(
+data class HeadlinesSourceDto(
     val category: String,
     val country: String,
     val description: String,
@@ -11,7 +11,7 @@ data class NewsItemDto(
     val name: String,
     val url: String
 ) {
-    fun mapToDomain() = NewsItem(
+    fun mapToDomain() = HeadlinesSource(
         category = category,
         country = country,
         description = description,
