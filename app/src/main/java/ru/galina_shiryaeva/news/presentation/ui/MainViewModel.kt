@@ -2,6 +2,7 @@ package ru.galina_shiryaeva.news.presentation.ui
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import ru.galina_shiryaeva.news.domain.model.everything_by_plants.Article
 import ru.galina_shiryaeva.news.domain.model.russianNews.HeadlinesSource
 import ru.galina_shiryaeva.news.domain.repository.Repository
 import javax.inject.Inject
@@ -11,9 +12,15 @@ class MainViewModel @Inject constructor(
 //    @ApplicationContext context: Context,
     private val repository: Repository
 ) : ViewModel() {
-    suspend fun getRusNews(): List<HeadlinesSource> {
-        repository.getAllRussianNews().also { newsResponse ->
-            return newsResponse?.sources ?: emptyList<HeadlinesSource>()
+    suspend fun getRusHeadlineSources(): List<HeadlinesSource> {
+        repository.getRusHeadlineSources().also { rusHeadlineSources ->
+            return rusHeadlineSources?.sources ?: emptyList()
+        }
+    }
+
+    suspend fun getNewsByPlants(): List<Article> {
+        repository.getNewsByPlants().also { news ->
+            return news?.articles ?: emptyList()
         }
     }
 

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.title.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
-                viewModel.getRusNews()
+                viewModel.getNewsByPlants()
             }
         }
     }

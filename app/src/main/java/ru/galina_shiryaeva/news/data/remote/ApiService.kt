@@ -2,7 +2,8 @@ package ru.galina_shiryaeva.news.data.remote
 
 import retrofit2.Response
 import retrofit2.http.GET
-import ru.galina_shiryaeva.news.data.remote.response.RusHeadlinesSourcesResponse
+import ru.galina_shiryaeva.news.data.remote.response.everything_by_plants.NewsByPlantsResponse
+import ru.galina_shiryaeva.news.data.remote.response.headlines_sources.RusHeadlinesSourcesResponse
 
 //const val GENERAL = "v2/top-headlines/sources?"
 //const val LANG_RU_PARAM = "country=ru"
@@ -13,7 +14,7 @@ import ru.galina_shiryaeva.news.data.remote.response.RusHeadlinesSourcesResponse
 
 
 const val HEADLINES_SOURCES_URL = "v2/top-headlines/sources?country=ru"
-const val EVERYTHING_PLANTS_URL = "v2/everything?q=plants&language=en"
+const val EVERYTHING_PLANTS_URL = "v2/everything?q=plants&language=en&pageSize=20"
 
 const val API_KEY = "&apiKey=46b53b521c1f439995d72d10464636a3"
 
@@ -29,9 +30,9 @@ interface ApiService {
     suspend fun getHeadlinesSources(
     ): Response<RusHeadlinesSourcesResponse?>
 
-    @GET(RUS_NEWS_URL)
-    suspend fun getAllAboutPlants(
-    ): Response<RusHeadlinesSourcesResponse?>
+    @GET(NEWS_BY_PLANTS_URL)
+    suspend fun getNewsByPlants(
+    ): Response<NewsByPlantsResponse?>
 
 
 //    @POST(GENERAL)

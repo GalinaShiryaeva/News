@@ -1,6 +1,7 @@
 package ru.galina_shiryaeva.news.data
 
 import ru.galina_shiryaeva.news.data.remote.ApiService
+import ru.galina_shiryaeva.news.domain.model.everything_by_plants.NewsByPlants
 import ru.galina_shiryaeva.news.domain.model.russianNews.RusHeadlinesSources
 import ru.galina_shiryaeva.news.domain.repository.Repository
 import javax.inject.Inject
@@ -11,9 +12,9 @@ class RepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : Repository {
 
-    override suspend fun getAllRussianNews(): RusHeadlinesSources? {
+    override suspend fun getRusHeadlineSources(): RusHeadlinesSources? {
         apiService.getHeadlinesSources().also { response ->
-            println("::::: response = ${response.body()}")
+            println("::::: response getHeadlinesSources = ${response.body()}")
             return if (response.isSuccessful) {
                 response.body()?.mapToDomain()
             } else {
@@ -21,5 +22,16 @@ class RepositoryImpl @Inject constructor(
             }
         }
 
+    }
+
+    override suspend fun getNewsByPlants(): NewsByPlants? {
+        apiService.getNewsByPlants().also { response ->
+            println("::::: response getNewsByPlants = ${response.body()}")
+            return if (response.isSuccessful) {
+                response.body()?.mapToDomain()
+            } else {
+                null
+            }
+        }
     }
 }

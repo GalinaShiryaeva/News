@@ -1,4 +1,4 @@
-package ru.galina_shiryaeva.news.data.remote.response
+package ru.galina_shiryaeva.news.data.remote.response.headlines_sources
 
 import com.google.gson.annotations.SerializedName
 import ru.galina_shiryaeva.news.domain.model.russianNews.RusHeadlinesSources
