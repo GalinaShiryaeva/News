@@ -1,17 +1,18 @@
-package ru.galina_shiryaeva.news
+package ru.galina_shiryaeva.news.presentation.ui
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
+import androidx.lifecycle.lifecycleScope
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ru.galina_shiryaeva.news.databinding.ActivityMainBinding
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    private val viewModel: MainViewModel by viewModels()
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
@@ -21,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.title.setOnClickListener {
+            lifecycleScope.launch(Dispatchers.IO) {
+                viewModel.getNewsByPlants()
+            }
+        }
     }
 }
