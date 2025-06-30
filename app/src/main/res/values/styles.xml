@@ -55,6 +55,16 @@
         <item name="android:textSize">@dimen/text_extra_large</item>
     </style>
 
+    <style name="FoundNewsTitle" parent="AppTheme">
+        <item name="fontFamily">@font/playfair_display_bold</item>
+        <item name="android:textSize">@dimen/text_extra_large</item>
+    </style>
+
+    <style name="FoundNewsDesc" parent="AppTheme">
+        <item name="fontFamily">@font/inter_light</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
     <style name="NewsTopic" parent="AppTheme">
         <item name="fontFamily">@font/inter_regular</item>
         <item name="android:textSize">@dimen/text_medium</item>
