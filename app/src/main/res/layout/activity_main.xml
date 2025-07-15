@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".presentation.ui.MainActivity">
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -49,14 +49,14 @@
                 app:layout_constraintTop_toTopOf="@id/notification">
 
                 <ImageView
-                    android:id="@+id/icon"
+                    android:id="@+id/weather_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/spacing_extra_small"
                     android:src="@drawable/ic_cloud" />
 
                 <TextView
-                    android:id="@+id/value"
+                    android:id="@+id/weather_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -201,6 +201,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </LinearLayout>

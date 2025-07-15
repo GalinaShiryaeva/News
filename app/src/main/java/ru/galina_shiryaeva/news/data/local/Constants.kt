@@ -7,5 +7,6 @@ object Constants {
     object Network {
         var isUnknownHostException: MutableLiveData<Boolean> = MutableLiveData(false)
         val RU = "ru"
+        const val MAX_PAGE_SIZE = 32
     }
 }

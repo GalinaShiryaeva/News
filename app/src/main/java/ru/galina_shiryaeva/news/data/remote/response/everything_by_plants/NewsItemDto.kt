@@ -1,18 +1,18 @@
 package ru.galina_shiryaeva.news.data.remote.response.everything_by_plants
 
-import ru.galina_shiryaeva.news.domain.model.everything_by_plants.Article
+import ru.galina_shiryaeva.news.domain.model.everything_by_plants.NewsItem
 
-data class ArticleDto(
+data class NewsItemDto(
     val author: String?,
     val content: String?,
     val description: String?,
     val publishedAt: String?,
-    val source: ArticleSourceDto?,
+    val source: NewsSourceDto?,
     val title: String?,
     val url: String?,
     val urlToImage: String?
 ) {
-    fun mapToDomain() = Article(
+    fun mapToDomain() = NewsItem(
         author = author,
         content = content,
         description = description,

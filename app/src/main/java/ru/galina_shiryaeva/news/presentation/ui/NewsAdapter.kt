@@ -2,6 +2,7 @@ package ru.galina_shiryaeva.news.presentation.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,33 +11,33 @@ import ru.galina_shiryaeva.news.R
 import ru.galina_shiryaeva.news.databinding.ItemFoundNewsBinding
 import ru.galina_shiryaeva.news.domain.model.everything_by_plants.NewsItem
 
-interface NewsItemEventListener1 {
+interface NewsItemEventListener {
     fun onMore(newsItem: NewsItem)
 }
 
-class FoundNewsAdapter(
-    private val newsItemListener: NewsItemEventListener1,
-) : ListAdapter<NewsItem, NewsItemViewHolder1>(NewsItemDiffCallback1()) {
+class NewsAdapter(
+    private val newsItemListener: NewsItemEventListener,
+) : PagingDataAdapter<NewsItem, NewsItemViewHolder>(NewsItemDiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsItemViewHolder1 {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsItemViewHolder {
         val binding = ItemFoundNewsBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return NewsItemViewHolder1(binding, newsItemListener)
+        return NewsItemViewHolder(binding, newsItemListener)
     }
 
-    override fun onBindViewHolder(holder: NewsItemViewHolder1, position: Int) {
+    override fun onBindViewHolder(holder: NewsItemViewHolder, position: Int) {
         val newsItem = getItem(position)
-        holder.bind(newsItem)
+        newsItem?.let { holder.bind(newsItem) }
     }
 }
 
-class NewsItemViewHolder1(
+class NewsItemViewHolder(
     private val binding: ItemFoundNewsBinding,
-    private val listener: NewsItemEventListener1
+    private val listener: NewsItemEventListener
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(newsItem: NewsItem) {
-        println(":::::newsItem1")
+        println(":::::bind newsItem in adapter")
         with(binding) {
             newsHeader.text = newsItem.title
             newsDesc.text = newsItem.description
@@ -52,7 +53,7 @@ class NewsItemViewHolder1(
     }
 }
 
-class NewsItemDiffCallback1 : DiffUtil.ItemCallback<NewsItem>() {
+class NewsItemDiffCallback : DiffUtil.ItemCallback<NewsItem>() {
     override fun areItemsTheSame(oldItem: NewsItem, newItem: NewsItem): Boolean {
         return ((oldItem.source?.id == newItem.source?.id)
                 && (oldItem.publishedAt == newItem.publishedAt))
