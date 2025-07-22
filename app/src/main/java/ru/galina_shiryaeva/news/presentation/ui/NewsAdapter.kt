@@ -37,7 +37,6 @@ class NewsItemViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(newsItem: NewsItem) {
-        println(":::::bind newsItem in adapter")
         with(binding) {
             newsHeader.text = newsItem.title
             newsDesc.text = newsItem.description

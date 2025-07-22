@@ -46,12 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.title.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
-//                _news.value = viewModel.getNewsByPlants()
-//                viewModel.getNewsByPlants()
-//                viewModel.foundNewsFlow.collectLatest { list -> }
                 viewModel.getNewsWithPaging().collect { pagingData ->
-//                    println(":::::list size1 = ${pagingData.map { i -> println("$i") }}")
-                    println(":::::print list paging")
                     pagingData.map { println("22222 ${it.title}") }
                     withContext(Dispatchers.Main) {
                         initNewsAdapter(pagingData)
@@ -61,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         lifecycleScope.launch {
-//            repeatOnLifecycle(Lifecycle.State.STARTED) {
             viewModel.weatherStateFlow.collectLatest { weather ->
                 val temprature = weather?.temperature_2m ?: -100.0
                 val weatherCode = weather?.weather_code

@@ -31,11 +31,9 @@ class NewsPagingSource(
 
         val response = apiService.getNews(page, pageSize)
         if (response.isSuccessful) {
-            println(":::::NewsPagingSource news response.size = ${response?.body()?.articles?.size}")
             val news = checkNotNull(response.body()).articles?.map { it.mapToDomain() } ?: emptyList()
             val nextKey = if (news.size < pageSize) null else page + 1
             val prevKey = if (page == 1) null else page - 1
-            // println(":::::NewsPagingSource news = ${if (news.isNullOrEmpty()) "nullOrEmpty" else "not null"}")
             return LoadResult.Page(news, prevKey, nextKey)
         } else {
             return LoadResult.Error(retrofit2.HttpException(response))
