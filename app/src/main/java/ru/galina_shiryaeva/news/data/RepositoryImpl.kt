@@ -46,11 +46,10 @@ class RepositoryImpl @Inject constructor(
     // FIXME
     override fun getNewsPaging(): Flow<PagingData<NewsItem>> {
         return Pager(config = PagingConfig(
-            pageSize = 17,
+            pageSize = 10,
             enablePlaceholders = false,
-            initialLoadSize = 31,
-            prefetchDistance = 5,
-            maxSize = 40
+            initialLoadSize = 10,
+            prefetchDistance = 5
         ), pagingSourceFactory = { NewsPagingSource(apiService) }).flow
     }
 

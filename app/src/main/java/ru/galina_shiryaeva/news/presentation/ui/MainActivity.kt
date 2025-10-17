@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         binding.title.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
                 viewModel.getNewsWithPaging().collect { pagingData ->
-                    pagingData.map { println("22222 ${it.title}") }
                     withContext(Dispatchers.Main) {
                         initNewsAdapter(pagingData)
                     }
