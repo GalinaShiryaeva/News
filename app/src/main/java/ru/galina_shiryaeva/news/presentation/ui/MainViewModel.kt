@@ -19,15 +19,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-//    @ApplicationContext context: Context,
     private val repository: Repository
 ) : ViewModel() {
-
-//    private var _foundNewsFlow: Flow<List<NewsItem>> = flowOf(emptyList())
-//    val foundNewsFlow = _foundNewsFlow
-
-//    val newsFlow: Flow<PagingData<NewsItem>> = repository.getNewsStream()
-//        .cachedIn(viewModelScope)
 
     private val _weatherStateFlow = MutableStateFlow<Current?>(null)
     val weatherStateFlow: StateFlow<Current?> = _weatherStateFlow.asStateFlow()
@@ -41,7 +34,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    suspend fun getNewsWithPaging(): Flow<PagingData<NewsItem>> =
+    fun getNewsWithPaging(): Flow<PagingData<NewsItem>> =
         repository.getNewsPaging().cachedIn(viewModelScope)
 
     suspend fun getRusHeadlineSources(): List<HeadlinesSource> {
@@ -49,12 +42,4 @@ class MainViewModel @Inject constructor(
             return rusHeadlineSources?.sources ?: emptyList()
         }
     }
-
-    suspend fun getNewsByPlants(): List<NewsItem> {
-        repository.getNewsByPlants().also { news ->
-//            _foundNewsFlow = listOf(news?.news ?: emptyList()).asFlow()
-            return news?.articles ?: emptyList()
-        }
-    }
-
 }
